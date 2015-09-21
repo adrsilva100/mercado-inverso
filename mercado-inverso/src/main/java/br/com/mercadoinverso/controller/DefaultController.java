@@ -11,7 +11,7 @@ public class DefaultController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String sayHello(ModelMap model) {
-		model.addAttribute("msg", "Hello World from Spring 4 MVC");
+		model.addAttribute("msg", "Hello World from Spring 4 MVCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
 		return "index";
 	}
 
