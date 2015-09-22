@@ -80,6 +80,12 @@
 			<artifactId>thymeleaf-layout-dialect</artifactId>
 			<version>${thymeleaf-dialect-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.jsimone</groupId>
+			<artifactId>webapp-runner</artifactId>
+			<version>7.0.22.3</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -100,11 +106,20 @@
 				<version>2.4</version>
 				<executions>
 					<execution>
-						<id>copy-dependencies</id>
 						<phase>package</phase>
 						<goals>
-							<goal>copy-dependencies</goal>
+							<goal>copy</goal>
 						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>7.0.22.3</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
