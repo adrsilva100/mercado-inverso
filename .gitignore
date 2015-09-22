@@ -1,4 +1,5 @@
 target/
+/heroku
 
 # Windows image file caches
 Thumbs.db
