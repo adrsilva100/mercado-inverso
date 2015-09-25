@@ -41,7 +41,12 @@
 	</head>
 	<body class="front no-trans">
 		<!-- header start -->
-		<div th:replace="/template/header :: header"></div>
+		<div sec:authorize="isAuthenticated()">
+			<div th:replace="/template/header-logado :: header"></div>
+		</div>
+		<div sec:authorize="isAnonymous()">
+			<div th:replace="/template/header-nao-logado :: header"></div>
+		</div>
 		<!-- header end -->
 		<div layout:fragment="content"><!-- dynamic content --></div>
 		<!-- page-wrapper end -->

@@ -1,23 +1,43 @@
 package br.com.mercadoinverso.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Controller
-@RequestMapping("/")
+import com.mercadoinverso.entities.User;
+
+import br.com.mercadoinverso.config.security.SecurityUser;
+import br.com.mercadoinverso.services.UserService;
+
+//@Controller
 public class DefaultController {
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String sayHello(ModelMap model) {
-		model.addAttribute("msg", "Hello World from Spring 4 MVCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-		return "index";
+	private static UserService userService;
+
+	@Autowired
+	public void setUserService(UserService userService) {
+		DefaultController.userService = userService;
 	}
 
-	@RequestMapping(value = "/helloagain", method = RequestMethod.GET)
-	public String sayHelloAgain(ModelMap model) {
-		model.addAttribute("msg", "Hello World Again, from Spring 4 MVCdasdsadsadasds");
-		return "index";
+	public static User getCurrentUser(){
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			String email = ((UserDetails) principal).getUsername();
+			User loginUser = userService.findUserByEmail(email);
+			return new SecurityUser(loginUser);
+		}
+
+		return null;
+	}
+
+	public boolean validaUsuarioLogado(){
+		boolean isUsuarioLogado = false;
+
+		if(getCurrentUser() != null){
+			isUsuarioLogado = true;
+		} 
+
+		return isUsuarioLogado;
 	}
 }

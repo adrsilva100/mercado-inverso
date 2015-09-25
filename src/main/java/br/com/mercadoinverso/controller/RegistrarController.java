@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class UsuarioController {
+public class RegistrarController {
 
 	@RequestMapping(value="/cadastrar", method=RequestMethod.GET)
 	public String cadastrarUsuario(){

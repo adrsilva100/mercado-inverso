@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="template/layout">
+<!--<![endif]-->
+	<head></head>
+	<body class="no-trans">
+		<div layout:fragment="content">
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+				<div class="container">
+					<div class="row">
+						<!-- sidebar start -->
+						<div th:replace="/template/menu-perfil"></div>
+						<!-- sidebar end -->
+						<!-- main start -->
+						<div class="main col-md-9">
+							<!-- page-title start -->
+							<h1 id="counters" class="page-title">Resumo</h1>
+							<br/>
+							<!-- page-title end -->
+							<!-- Counters start -->
+							<h2 class="title">Nível de Reputação</h2>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+									<span class="sr-only">Ótima</span>
+								</div>
+							</div>
+							<div class="stats row grid-space-10">
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Novas Mensagens</h2>
+										<i class="fa fa-envelope"></i>
+										<span class="stat-num" data-to="1525" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Possiveis Vendas</h2>
+										<i class="fa fa-cloud-download"></i>
+										<span class="stat-num" data-to="1836" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Produtos Disponiveis</h2>
+										<i class="fa fa-thumbs-o-up"></i>
+										<span class="stat-num" data-to="2687" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Meus Favoritos</h2>
+										<i class="fa fa-thumbs-o-up"></i>
+										<span class="stat-num" data-to="2687" data-speed="3000">0</span>
+									</div>
+								</div>
+							</div>
+							<div class="stats row grid-space-10">
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Total de Compras</h2>
+										<i class="fa fa-briefcase"></i>
+										<span class="stat-num" data-to="1525" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Total de Vendas</h2>
+										<i class="fa fa-users"></i>
+										<span class="stat-num" data-to="1125" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Total de Likes</h2>
+										<i class="fa fa-cloud-download"></i>
+										<span class="stat-num" data-to="1836" data-speed="3000">0</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<div class="box-style-1 gray-bg">
+										<h2 class="title">Total de DisLikes</h2>
+										<i class="fa fa-thumbs-o-up"></i>
+										<span class="stat-num" data-to="2687" data-speed="3000">0</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12">
+								<h2>Vendas nos últimos 6 meses</h2>
+								<canvas class="graph bar" id="bars-graph" height="341" width="380" style="width: 100%; height: 341px;"></canvas>
+								<br/>
+								<br/>
+							</div>
+						</div>	
+						<!-- main end -->
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+		</div>	
+	</body>
+</html>

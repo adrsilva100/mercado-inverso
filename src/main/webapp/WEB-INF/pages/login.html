@@ -20,18 +20,26 @@
 							<div class="form-block center-block">
 								<h2 class="title">Login</h2>
 								<hr/>
-								<form class="form-horizontal">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="alert alert-danger" role="alert" th:if="${message_login_failure}" data-animation-effect="fadeInDown">
+											<strong th:text="${message_login_failure}"></strong>
+										</div>
+									</div>
+								</div>
+								<form th:action="@{/j_spring_security_check}" method="post" class="form-horizontal" id="logoutForm">
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									<div class="form-group has-feedback">
 										<label for="inputUserName" class="col-sm-3 control-label">User Name</label>
 										<div class="col-sm-8">
-											<input type="text" class="form-control" id="inputUserName" placeholder="User Name" required=""/>
+											<input type="text" name="j_username" class="form-control" id="inputUserName" placeholder="User Name" required=""/>
 											<i class="fa fa-user form-control-feedback"></i>
 										</div>
 									</div>
 									<div class="form-group has-feedback">
 										<label for="inputPassword" class="col-sm-3 control-label">Password</label>
 										<div class="col-sm-8">
-											<input type="password" class="form-control" id="inputPassword" placeholder="Password" required=""/>
+											<input name="j_password" type="password" class="form-control" id="inputPassword" placeholder="Password" required=""/>
 											<i class="fa fa-lock form-control-feedback"></i>
 										</div>
 									</div>
@@ -39,7 +47,7 @@
 										<div class="col-sm-offset-3 col-sm-8">
 											<div class="checkbox">
 												<label>
-													<input type="checkbox" required=""/> Remember me.
+													<input type="checkbox"/> Remember me.
 												</label>
 											</div>											
 											<button type="submit" class="btn btn-group btn-default btn-sm">Log In</button>

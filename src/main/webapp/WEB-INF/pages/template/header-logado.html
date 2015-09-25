@@ -22,51 +22,10 @@
 									<!-- header top dropdowns start -->
 									<div class="header-top-dropdown">
 										<div class="btn-group dropdown">
-											<button type="button" class="btn dropdown-toggle"><a th:href="@{/cadastrar}" id="link-header"><i class="icon-right"></i> Cadastre-se</a></button>
+											<button type="button" class="btn dropdown-toggle"><a th:href="@{/perfil/resumo}" id="link-login-header"><i class="glyphicon glyphicon-user"></i> <span sec:authentication="name"/></a></button>
 										</div>
 										<div class="btn-group dropdown">
-											<button type="button" class="btn dropdown-toggle"><a th:href="@{/login}" id="link-login-header"><i class="fa fa-user"></i> Login</a></button>
-										</div>
-										<div class="btn-group dropdown">
-											<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> Cart (8)</button>
-											<ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
-												<li>
-													<table class="table table-hover">
-														<thead>
-															<tr>
-																<th class="quantity">QTY</th>
-																<th class="product">Product</th>
-																<th class="amount">Subtotal</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="quantity">2 x</td>
-																<td class="product"><a href="shop-product.html">Android 4.4 Smartphone</a><span class="small">4.7" Dual Core 1GB</span></td>
-																<td class="amount">$199.00</td>
-															</tr>
-															<tr>
-																<td class="quantity">3 x</td>
-																<td class="product"><a href="shop-product.html">Android 4.2 Tablet</a><span class="small">7.3" Quad Core 2GB</span></td>
-																<td class="amount">$299.00</td>
-															</tr>
-															<tr>
-																<td class="quantity">3 x</td>
-																<td class="product"><a href="shop-product.html">Desktop PC</a><span class="small">Quad Core 3.2MHz, 8GB RAM, 1TB Hard Disk</span></td>
-																<td class="amount">$1499.00</td>
-															</tr>
-															<tr>
-																<td class="total-quantity" colspan="2">Total 8 Items</td>
-																<td class="total-amount">$1997.00</td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="panel-body text-right">	
-													<a href="shop-cart.html" class="btn btn-group btn-default btn-sm">View Cart</a>
-													<a href="shop-checkout.html" class="btn btn-group btn-default btn-sm">Checkout</a>
-													</div>
-												</li>
-											</ul>
+											<button type="button" class="btn dropdown-toggle"><a th:href="@{/j_spring_security_logout}" id="link-login-header"><i class="icon-logout"></i> Logout</a></button>
 										</div>
 									</div>
 									<!--  header top dropdowns end -->
@@ -115,7 +74,7 @@
 												<div class="collapse navbar-collapse" id="navbar-collapse-1">
 													<ul class="nav navbar-nav navbar-right">
 														<li class="dropdown active">
-															<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+															<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Anuciar</a>
 															<ul class="dropdown-menu">
 																<li class="active"><a href="index.html">Home - Default</a></li>
 																<li><a href="index-2.html">Home - 2</a></li>

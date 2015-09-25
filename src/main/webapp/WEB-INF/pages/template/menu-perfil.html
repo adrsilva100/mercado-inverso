@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<aside class="col-md-3">
+		<div class="sidebar">
+			<div class="block clearfix">
+				<h3 class="title">Perfil</h3>
+				<div class="separator"></div>
+				<nav>
+					<ul class="nav nav-pills nav-stacked">
+						<li class="active"><a th:href="@{/perfil/resumo}"><i class=" icon-network"></i> Resumo</a></li>
+						<li><a th:href="@{/perfil/alterarDadosPessoais}"><i class="icon-cog"></i> Cadastro</a></li>
+						<li><a href="portfolio-3col.html"><i class="icon-doc-text"></i> Compras</a></li>
+						<li><a href="page-about.html"><i class="icon-doc-text"></i> Vendas</a></li>
+						<li><a href="page-contact.html"><i class="icon-mail"></i> Mensagens</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</aside>
+</body>
+</html>
